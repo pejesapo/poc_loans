@@ -1,1 +1,2 @@
 default: --no-source --color --format pretty TARGET=local
+sauce: --no-source --color --format pretty TARGET=sauce_labs

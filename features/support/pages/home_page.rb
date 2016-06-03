@@ -18,7 +18,7 @@ class Home_Page
   end
 
   def select_reason(reason)
-    reason_element.when_present(30).send_keys(reason)
+    reason_element.when_present(30).select(reason)
   end
 
   def enter_dni(dni)

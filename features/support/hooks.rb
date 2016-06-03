@@ -5,10 +5,14 @@ Before do |scenario|
   Data_Access::load
   @scenario_session = Scenario_Session.new
   @browser = Utilities.set_browser(scenario.name)
-  Utilities.maximize_browser_window(@browser)
+  #Utilities.maximize_browser_window(@browser)
 end
 
 After do |scenario|
+  if ENV['TARGET'] == 'sauce_labs'
+    Utilities.sauce_update_job_success(@browser,!scenario.failed?)
+  end
+
   begin
     if scenario.failed?
       take_screenshot(scenario.name)
