@@ -1,0 +1,19 @@
+users:
+  -
+    first_name: Majo
+    last_name: Caceres
+    dni: 41345827
+    pin6: 123456
+    loans:
+      -
+        purpose: Travel around the world
+        amount: 10000.00
+  -
+    first_name: Juan
+    last_name: Salazar
+    dni: 46283445
+    pin6: 123456
+    loans:
+      -
+        purpose: Buy a professional bike
+        amount: 15000.00
