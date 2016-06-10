@@ -1,7 +1,8 @@
 class Home_Page
   include PageObject
 
-  page_url 'http://www.brainhousesolutions.com/loans'
+  #page_url 'http://www.brainhousesolutions.com/loans'
+  page_url FigNewton.url
 
   text_field(:amount, :id => 'monto')
   select_list(:reason, :id => 'motivo')

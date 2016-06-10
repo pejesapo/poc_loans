@@ -23,4 +23,15 @@ class Available_Plans_Page
     available_plans_list
   end
 
+  def choose_plan(plan)
+    #chooseloan_element.when_present(30).click
+    available_plans_components.each do |available_plan|
+      if available_plan.get_plan_number==plan
+        available_plan.choose_plan
+        break
+      end
+    end
+    #sleep 30
+  end
+
 end

@@ -2,6 +2,7 @@ require 'watir-webdriver'
 
 
 Before do |scenario|
+  Watir.default_timeout = 90
   Data_Access::load
   @scenario_session = Scenario_Session.new
   @browser = Utilities.set_browser(scenario.name)
@@ -19,10 +20,10 @@ After do |scenario|
     end
   rescue => error
     puts error.to_s
-    @browser.close
-  ensure
-    @browser.close
   end
+  @browser.inspect
+  @browser.close
+
 end
 
 def take_screenshot(scenario_name)

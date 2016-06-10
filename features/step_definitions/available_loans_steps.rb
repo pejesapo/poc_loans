@@ -9,6 +9,19 @@ When(/^I provide the following information to get the available loan plans for m
   on(Home_Page).enter_values(amount, reason, dni)
 end
 
-Then(/^I should get the following plans:$/) do |plans|
+Then(/^the following plans should be displayed$/) do |plans|
   on(Available_Plans_Page).get_available_plans.should have_the_same_items_as plans.hashes
+end
+
+And(/^I choose option N° "([^"]*)"$/) do |plan_number|
+  on(Available_Plans_Page).choose_plan(plan_number)
+end
+
+And(/^she asks for a S\/\."([^"]*)" loan$/) do |amount|
+  on(Home_Page).enter_values(amount, purpose, @user.dni)
+end
+
+Given(/^"([^"]*)" has navigated to the Loans Web App$/) do |userFirstName|
+  visit(Home_Page)
+  @user = getUser(userFirstName)
 end
